@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Monarca Das Assinatursa — Gêmeos Lab</title>
+  <title>Monarca Das Assinaturas — Gêmeos Lab</title>
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,307 +14,307 @@
             base: '#08121c',
             card: '#0e1a2a',
             edge: '#0b1522',
-            cyan: {
-              400: '#22d3ee',
-              500: '#06b6d4',
-            },
+            cyan: { 400: '#22d3ee', 500: '#06b6d4' },
             brand: '#16b7ff',
           },
           boxShadow: {
             glow: '0 0 0 1px rgba(56,189,248,.25), 0 10px 30px rgba(2, 132, 199, .25)'
           },
           backgroundImage: {
-            hero: "radial-gradient(1000px 600px at 60% 10%, rgba(34,211,238,.15), transparent 60%), url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1600&auto=format&fit=crop')",
+            hero: "radial-gradient(1000px_600px_at_60%_10%, rgba(34,211,238,.15), transparent_60%), url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1600&auto=format&fit=crop')",
           }
         }
       }
     }
   </script>
+
+  <!-- Swiper (single version, unified) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <style>
-    /* scrollbars sutis */
-    ::-webkit-scrollbar{width:10px;height:10px}
-    ::-webkit-scrollbar-thumb{background:#0f2035;border-radius:9999px}
+   /* Subtle scrollbars */
+/* Subtle scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #0f2035; border-radius: 9999px; }
+
+/* Base adjustments */
+section {
+  margin: 0;
+  padding: 20px;
+  width: 100%;         /* always stretch full */
+  max-width: none;     /* no lock */
+  box-sizing: border-box;
+}
+
+/* Large screens (≥1600px) */
+@media (min-width: 1600px) {
+  section {
+    width: 100%;       /* still stretch full */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Ultra-wide (≥2560px – 4000px) */
+@media (min-width: 2560px) {
+  body {
+    display: block; /* remove centering */
+  }
+  section {
+    width: 100%;
+    margin: 0;
+  }
+}
+
   </style>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2239369116525127');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2239369116525127&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+<!-- <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Wrap all content inside a container */
+.container {
+  max-width: 1400px; /* Keeps content same as laptop view */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive typography */
+h1, h2, h3 {
+  line-height: 1.3;
+}
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+  p  { font-size: 0.95rem; }
+}
+
+/* Tablets & small laptops (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+  p  { font-size: 1rem; }
+}
+
+/* Desktops (1201px - 1599px) */
+@media (min-width: 1201px) and (max-width: 1599px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.4rem; }
+  p  { font-size: 1.05rem; }
+}
+
+/* Large Screens (1600px - 4000px) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;  /* Lock content width */
+  }
+  h1, h2, h3 {
+    font-size: 1.2em; /* Keep them readable, not oversized */
+  }
+  p {
+    font-size: 1.05em;
+    line-height: 1.7;
+  }
+  section {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+</style> -->
+  <!-- Meta Pixel Code (mantido) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2239369116525127');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2239369116525127&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
+
 <body class="bg-base text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-white">
 
   <!-- ====== HERO ====== -->
-<header class="relative overflow-hidden min-h-[80vh]">
-
-  <div class="absolute inset-0 bg-[radial-gradient(900px_500px_at_70%_0%,rgba(59,130,246,.18),transparent_60%)] pointer-events-none"></div>
+  <header class="relative overflow-hidden min-h-[70vh] sm:min-h-[75vh] lg:min-h-[50vh]">
+    <div class="absolute inset-0 bg-[radial-gradient(900px_500px_at_70%_0%,rgba(59,130,246,.18),transparent_60%)] pointer-events-none"></div>
     <section class="relative isolate">
-<div class="absolute inset-0 bg-[url('https://i.ibb.co/60VNpb3P/Untitled-design-20.png')] bg-cover bg-center bg-no-repeat opacity-15"></div>
+      <div class="absolute inset-0 bg-[url('https://i.ibb.co/60VNpb3P/Untitled-design-20.png')] bg-cover bg-center bg-no-repeat opacity-15"></div>
 
-
-
-  <div class="container mx-auto max-w-6xl px-4 md:px-6 pt-8 md:pt-10 lg:pt-12 pb-12 md:pb-16 lg:pb-24">
-<div class="grid lg:grid-cols-2 gap-8">
-  <div class="z-10 self-start">
+      <div class="container mx-auto max-w-6xl px-4 sm:px-6 pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-24">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+          <div class="z-10">
             <p class="text-xs tracking-widest uppercase text-cyan-400/80 mb-3">Oferta Exclusiva • Acesso Imediato</p>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-              Seu celular já poderia estar te colocando
-              <span class="text-cyan-400 drop-shadow">dinheiro no bolso</span>
+           Pessoas comuns já estão faturando 
+              <span class="text-cyan-400 drop-shadow"><br>R$ 500 a R$ 2.000 por semana</span>  
+  e você ainda está de fora?</span>
             </h1>
-            <p class="mt-4 text-slate-300 max-w-prose">sem aparecer, sem investir, começando do zero. O que você está esperando?</p>
+            <p class="mt-4 text-slate-300 max-w-prose">Sem aparecer, sem investir, começando do zero. O que você está esperando?</p>
 
             <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
               <a href="#checkout" class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
-              Quero Construir Minha Máquina de Vendas
+                Quero Construir Minha Máquina de Vendas
               </a>
             </div>
           </div>
-<img src="https://i.ibb.co/V0gwjRfF/Untitled-design-17.png"
-     alt="Imagem livre"
-     class="isolate max-w-md w-full h-auto mx-auto scale-[1.3] md:scale-[1.3] translate-y-[60px]"
-     style="mix-blend-mode: normal;" />
 
-      </div>
-    </section>
-    
-  </header>
-
- <!-- Seção dos Cards e Texto -->
-<section class="relative bg-[#0c111d] text-white overflow-visible mt[50px]">
-
-  <div class="container mx-auto max-w-6xl px-4 md:px-6 py-25 relative z-0">
-    <div class="flex flex-col md:flex-row md:justify-between gap-12 relative z-0">
-
-      <!-- Texto -->
-    <div class="max-w-md transition-transform duration-300
-            translate-y-[10%] md:translate-y-[20%]">
-
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
-          Uma estratégia tão poderosa que já mudou<br>a vida de centenas de pessoas comuns!
-        </h2>
-        <p class="text-slate-400 text-sm mt-4">
-          Um sistema simples, 100% automático que transforma<br>
-         seu celular em uma máquina de vender. <br>
-        </p>
-
-        <!-- Avatares -->
-<div class="mt-6 flex justify-center items-center">
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white" 
-     src="https://images.unsplash.com/photo-1634983852158-996b99c1b26f?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 1"/>
-
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-2 z-10"
-     src="https://images.unsplash.com/photo-1652742887375-6ddb210d797e?crop=faces&fit=crop&w=100&h=100"
-     alt="Avatar 2"/>
-
-
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-4 z-10"
-     src="https://images.unsplash.com/photo-1631885628726-d60689c330db?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 3"/>
-
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-6 z-10"
-     src="https://images.unsplash.com/photo-1640728422795-e620da751e13?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 4"/>
-          <span class="ml-3 text-sm text-slate-400 leading-tight mt-2 md:mt-0 block md:inline-block">
-           Se 1.500+ alunos já começaram, que você está esperando?
-          </span>
+          <div class="relative mx-auto w-full max-w-md">
+  <img
+    src="https://i.ibb.co/V0gwjRfF/Untitled-design-17.png"
+    alt="Imagem livre"
+    class="isolate w-full h-auto mx-auto scale-110 sm:scale-110 md:scale-110 
+           translate-y-10 sm:translate-y-12 md:translate-y-14 lg:translate-y-28 "
+    style="mix-blend-mode: normal;"
+  />
+</div>
         </div>
       </div>
+    </section>
+  </header>
 
-<!-- Grade dinâmica 4 cards lado a lado / 2 por 2 no mobile -->
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto relative z-10">
+  <!-- ====== Seção Cards + Texto ====== -->
+  <section class="relative bg-[#0c111d] text-white overflow-visible">
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20 relative z-0">
+      <div class="flex flex-col md:flex-row md:justify-between gap-10 relative z-0">
 
-  <!-- Cards de vídeo -->
-<div class="relative aspect-[9/16] max-h-[300px] rounded-xl overflow-hidden shadow-xl -translate-y-[10px] md:-translate-y-[96px] cursor-pointer"
-     onclick="openVideoModal('cTjr3kn2zw9')">
-  <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/40/cTjr3kn2zw9/preview.jpg"
-       class="absolute inset-0 w-full h-full object-cover rounded-xl" />
-  <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
-    <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8 5v14l11-7z" />
-      </svg>
-    </div>
-  </div>
-</div>
+        <!-- Texto -->
+        <div class="max-w-xl md:max-w-md transition-transform duration-300 translate-y-2 md:translate-y-6 mx-auto md:mx-0 text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+            Uma estratégia tão poderosa que já mudou<br class="hidden md:block">a vida de centenas de pessoas comuns!
+          </h2>
+          <p class="text-slate-400 text-sm mt-4">
+            Um sistema simples, 100% automático que transforma<br class="hidden sm:block">
+            seu celular em uma máquina de vender.
+          </p>
 
-<!-- Modal global de vídeo -->
-<div id="videoModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden p-4">
-  <div class="absolute inset-0" onclick="closeVideoModal()"></div>
-  <div class="relative w-full max-w-sm md:max-w-md lg:max-w-lg aspect-[9/16] max-h-[80vh] z-10 rounded-xl overflow-hidden bg-black">
-    <button onclick="closeVideoModal()" class="absolute top-2 right-2 text-white text-3xl z-50">&times;</button>
-    <div id="modalPlayer" class="w-full h-full"></div>
-  </div>
-</div>
+          <!-- Avatares -->
+          <div class="mt-6 flex flex-wrap justify-center md:justify-start items-center gap-0">
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1634983852158-996b99c1b26f?crop=faces&fit=crop&w=100&h=100" alt="Avatar 1"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1652742887375-6ddb210d797e?crop=faces&fit=crop&w=100&h=100" alt="Avatar 2"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1631885628726-d60689c330db?crop=faces&fit=crop&w=100&h=100" alt="Avatar 3"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1640728422795-e620da751e13?crop=faces&fit=crop&w=100&h=100" alt="Avatar 4"/>
+            <span class="ml-3 text-sm text-slate-400 leading-tight mt-3 md:mt-0 block">
+             <br> Se 1.500+ alunos já começaram, que você está esperando?
+            </span>
+          </div>
+        </div>
 
-<script>
-function openVideoModal(id) {
-  const container = document.getElementById('modalPlayer');
-  container.innerHTML = ''; // limpa modal
+        <!-- Grade dinâmica 4 cards (2x2 no mobile, 4 no lg) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto relative z-10">
+          <!-- Card 1 - Vídeo -->
+          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
+               onclick="openVideoModal('cTjr3kn2zw9')">
+            <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/40/cTjr3kn2zw9/preview.jpg"
+                 class="absolute inset-0 w-full h-full object-cover rounded-xl" alt="" />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+              <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+          </div>
 
-  const iframe = document.createElement('iframe');
-  iframe.width = '100%';
-  iframe.height = '100%';
-  iframe.style.border = '0';
-  iframe.scrolling = 'no';
-  iframe.allowFullscreen = true;
-  iframe.src = `https://go.screenpal.com/player/${id}?autoplay=1&controls=1&share=1&download=1&embed=1&width=1280&height=720&overlays=1&ff=1`;
-  
-  container.appendChild(iframe);
+          <!-- Card 2 - Imagem -->
+          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
+               onclick="openImageModal('https://i.ibb.co/4gKLytTy/Untitled-design-21.png')">
+            <img src="https://i.ibb.co/4gKLytTy/Untitled-design-21.png" class="absolute inset-0 w-full h-full object-cover" alt=""/>
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
+              <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
+                <span>Clique para ampliar</span>
+              </div>
+            </div>
+          </div>
 
-  document.getElementById('videoModal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
+          <!-- Card 3 - Vídeo -->
+          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
+               onclick="openVideoModal('cTjr39n2zyA')">
+            <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/58/cTjr39n2zyA/preview.jpg"
+                 class="absolute inset-0 w-full h-full object-cover rounded-xl" alt=""/>
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+              <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+          </div>
 
-function closeVideoModal() {
-  const container = document.getElementById('modalPlayer');
-  container.innerHTML = '';
-  document.getElementById('videoModal').classList.add('hidden');
-  document.body.style.overflow = 'auto';
-}
-</script>
+          <!-- Card 4 - Imagem -->
+          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
+               onclick="openImageModal('https://i.ibb.co/HD9857td/Untitled-design-22.png')">
+            <img src="https://i.ibb.co/HD9857td/Untitled-design-22.png" class="absolute inset-0 w-full h-full object-cover" alt=""/>
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
+              <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
+                <span>Clique para ampliar</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <!-- Card 2 - Imagem -->
-<div class="relative aspect-[9/16] max-h-[300px] rounded-xl overflow-hidden shadow-xl -translate-y-[-20px] md:-translate-y-[38px] cursor-pointer group"
-     onclick="openImageModal('https://i.ibb.co/4gKLytTy/Untitled-design-21.png')">
-  <img src="https://i.ibb.co/4gKLytTy/Untitled-design-21.png" class="absolute inset-0 w-full h-full object-cover" />
+        <!-- Modais globais -->
+        <!-- Vídeo -->
+        <div id="videoModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden p-4">
+          <div class="absolute inset-0" onclick="closeVideoModal()"></div>
+          <div class="relative w-full max-w-sm md:max-w-md lg:max-w-lg aspect-[9/16] max-h-[80vh] z-10 rounded-xl overflow-hidden bg-black">
+            <button onclick="closeVideoModal()" class="absolute top-2 right-2 text-white text-3xl z-50">&times;</button>
+            <div id="modalPlayer" class="w-full h-full"></div>
+          </div>
+        </div>
 
-  <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:opacity-100">
-    <div class="text-white text-lg font-semibold flex items-center space-x-2">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/>
-      </svg>
-      <span>Clique para ampliar</span>
-    </div>
-  </div>
-</div>
-
-<!-- Modal global de imagem -->
-<div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
-  <!-- Overlay clicável -->
-  <div class="absolute inset-0" onclick="closeImageModal()"></div>
-
-  <div class="relative z-10 w-full h-full flex items-center justify-center">
-    <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white text-4xl z-50">&times;</button>
-    <img id="modalImage" src="" class="max-w-full max-h-full object-contain rounded-lg shadow-xl" />
-  </div>
-</div>
-
-<script>
-function openImageModal(src) {
-  const img = document.getElementById('modalImage');
-  img.src = src;
-  document.getElementById('imageModal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeImageModal() {
-  document.getElementById('imageModal').classList.add('hidden');
-  document.getElementById('modalImage').src = '';
-  document.body.style.overflow = 'auto';
-}
-</script>
-
-
-  <!-- Card 3 - Vídeo -->
- <div class="relative aspect-[9/16] max-h-[300px] rounded-xl overflow-hidden shadow-xl -translate-y-[10px] md:-translate-y-[96px] cursor-pointer"
-       onclick="openVideoModal('cTjr39n2zyA')">
-    <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/58/cTjr39n2zyA/preview.jpg"
-         class="absolute inset-0 w-full h-full object-cover rounded-xl" />
-    <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
-      <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 4 - Imagem -->
-  <div class="relative aspect-[9/16] max-h-[300px] rounded-xl overflow-hidden shadow-xl -translate-y-[-20px] md:-translate-y-[38px] cursor-pointer group"
-       onclick="openImageModal('https://i.ibb.co/HD9857td/Untitled-design-22.png')">
-    <img src="https://i.ibb.co/HD9857td/Untitled-design-22.png" class="absolute inset-0 w-full h-full object-cover" />
-
-    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:opacity-100">
-      <div class="text-white text-lg font-semibold flex items-center space-x-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/>
-        </svg>
-        <span>Clique para ampliar</span>
-      </div>
-    </div>
-  </div>
-</div>
-
+        <!-- Imagem -->
+        <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+          <div class="absolute inset-0" onclick="closeImageModal()"></div>
+          <div class="relative z-10 w-full h-full flex items-center justify-center">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white text-4xl z-50">&times;</button>
+            <img id="modalImage" src="" class="max-w-full max-h-full object-contain rounded-lg shadow-xl" alt=""/>
+          </div>
+        </div>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script>
-function playVideo(card, url) {
-  card.innerHTML = `
-    <iframe src="${url}?autoplay=1"
-            class="absolute inset-0 w-full h-full"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen></iframe>
-  `;
-}
-</script>
+  <!-- ====== Seção "Essa pode ser..." ====== -->
+  <section class="relative py-12 sm:py-16 lg:py-20">
+    <div class="text-center px-4">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+        Essa pode ser só mais uma página que você fecha…
+      </h2>
+      <p class="mt-3 max-w-3xl mx-auto text-sm sm:text-base" style="color:#9CA3AF;">
+  Ou o instante em que você decide finalmente criar um negócio que trabalha sozinho para você, todos os dias, sem complicação.
+</p>
+    </div>
 
-
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monarca das Assinaturas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #0a0f1d;
-    }
-  </style>
-</head>
-<body class="min-h-screen bg-[#0c111d]">
-
-<section class="relative" style="padding-top: 4cm; padding-bottom: 3rem;">
-
-  <div class="text-center" style="margin-bottom: 1cm;">
-  <h2 class="text-3xl md:text-4xl font-bold text-white">
-    Essa pode ser só mais uma página que você fecha…
-  </h2>
-  <p class="text-slate-300 mt-3 max-w-3xl mx-auto">
-    Ou o instante em que você decide finalmente criar um negócio que trabalha sozinho para você, todos os dias, sem complicação.
-  </p>
-</div>
     <!-- Glow atrás -->
     <div class="absolute inset-x-0 top-[180px] -z-10 h-[240px] bg-cyan-500/30 rounded-3xl blur-[90px]"></div>
 
     <!-- Card principal -->
-   <!-- Card principal -->
-<div class="relative max-w-4xl mx-auto bg-[#0c111d] rounded-3xl p-5 text-white shadow-lg">
-
-
-      <!-- Grid 3x2 centralizado -->
+    <div class="relative max-w-4xl mx-auto bg-[#0c111d] rounded-3xl p-5 sm:p-6 md:p-8 text-white shadow-lg mt-8">
+      <!-- Grid 3x2 -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
         <!-- Bloco 1 -->
         <div class="text-center">
           <div class="flex justify-center mb-4">
@@ -325,7 +326,9 @@ function playVideo(card, url) {
           </div>
           <h3 class="text-lg font-semibold text-white mb-2">Liberdade total</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Trabalhe de onde quiser, no seu horário, sem depender de chefe ou rotina fixa. Seu negócio funciona sozinho e garante que você viva sem limites, aproveitando a vida que poucos têm coragem de conquistar.        </div>
+            Trabalhe de onde quiser, no seu horário, sem depender de chefe ou rotina fixa. Seu negócio funciona sozinho e garante que você viva sem limites, aproveitando a vida que poucos têm coragem de conquistar.
+          </p>
+        </div>
 
         <!-- Bloco 2 -->
         <div class="text-center">
@@ -341,7 +344,8 @@ Trabalhe de onde quiser, no seu horário, sem depender de chefe ou rotina fixa. 
           </div>
           <h3 class="text-lg font-semibold text-white mb-2">Viva a sua história de conquistas</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Cada escolha te coloca à frente. Mais autonomia, mais experiências incríveis, mais momentos que realmente importam — e que só você vai ter.          </p>
+            Cada escolha te coloca à frente. Mais autonomia, mais experiências incríveis, mais momentos que realmente importam — e que só você vai ter.
+          </p>
         </div>
 
         <!-- Bloco 3 -->
@@ -357,7 +361,9 @@ Cada escolha te coloca à frente. Mais autonomia, mais experiências incríveis,
           </div>
           <h3 class="text-lg font-semibold text-white mb-2">Máquina de vendas 24/7</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Aprenda a gerar receita automaticamente todos os dias, mesmo enquanto descansa, viaja ou se diverte. Ganhar dinheiro enquanto dorme deixa de ser sonho e vira rotina.        </div>
+            Aprenda a gerar receita automaticamente todos os dias, mesmo enquanto descansa, viaja ou se diverte. Ganhar dinheiro enquanto dorme deixa de ser sonho e vira rotina.
+          </p>
+        </div>
 
         <!-- Bloco 4 -->
         <div class="text-center">
@@ -369,10 +375,11 @@ Aprenda a gerar receita automaticamente todos os dias, mesmo enquanto descansa, 
               </svg>
             </div>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">Comece do zero, cresça sem limites
-</h3>
+          <h3 class="text-lg font-semibold text-white mb-2">Comece do zero, cresça sem limites</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Mesmo sem experiência, sem investir rios de dinheiro e sem aparecer, você terá um caminho claro para construir algo sólido, escalável e lucrativo, sem enrolação, sem fórmulas mágicas e sem depender de ninguém.        </div>
+            Mesmo sem experiência, sem investir rios de dinheiro e sem aparecer, você terá um caminho claro para construir algo sólido, escalável e lucrativo, sem enrolação, sem fórmulas mágicas e sem depender de ninguém.
+          </p>
+        </div>
 
         <!-- Bloco 5 -->
         <div class="text-center">
@@ -386,7 +393,8 @@ Mesmo sem experiência, sem investir rios de dinheiro e sem aparecer, você ter�
           </div>
           <h3 class="text-lg font-semibold text-white mb-2">Transforme seu negócio em um legado</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Cada estratégia aplicada constrói mais que lucro: cria estilo de vida, liberdade financeira e possibilidades reais de crescimento que vão impactar sua vida hoje e no futuro.          </p>
+            Cada estratégia aplicada constrói mais que lucro: cria estilo de vida, liberdade financeira e possibilidades reais de crescimento que vão impactar sua vida hoje e no futuro.
+          </p>
         </div>
 
         <!-- Bloco 6 -->
@@ -400,460 +408,329 @@ Cada estratégia aplicada constrói mais que lucro: cria estilo de vida, liberda
           </div>
           <h3 class="text-lg font-semibold text-white mb-2">Não é mais um curso qualquer</h3>
           <p class="text-sm text-gray-400 leading-relaxed px-2">
-Este não é aquele treinamento que te ensina 10% de teoria e 90% de distração. Aqui, você aprende a criar um negócio completo, escalável e automatizado, para que suas conquistas financeiras sejam reais e duradouras.          </p>
+            Este não é aquele treinamento que te ensina 10% de teoria e 90% de distração. Aqui, você aprende a criar um negócio completo, escalável e automatizado, para que suas conquistas financeiras sejam reais e duradouras.
+          </p>
         </div>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-</body>
-</html>
-
-
-
-<!-- ====== 3 FASES ====== -->
-<section class="relative py-14">
-    <!-- Glow atrás -->
-<div class="absolute inset-x-0 top-[180px] -z-10 h-[240px] bg-cyan-500/30 rounded-3xl blur-[90px]"></div>
+  <!-- ====== 3 FASES ====== -->
+ <section class="relative py-14">
+  <!-- Background limited width -->
+  <div class="absolute top-[180px] -z-10 h-[240px] w-full max-w-6xl mx-auto left-0 right-0 bg-cyan-500/30 rounded-3xl blur-[90px]"></div>
 
   <div class="container mx-auto max-w-6xl px-4">
     <!-- Imagem principal -->
     <div class="mx-auto max-w-3xl mb-8">
       <div class="relative aspect-[16/9] rounded-2xl overflow-hidden">
-        <img class="absolute inset-0 h-full w-full object-cover" src="https://i.ibb.co/vx4XBPJM/Untitled-design-1.png" alt="player"/>
-        
-        <!-- Card de texto sobreposto -->
+        <img class="absolute inset-0 h-full w-full object-cover" src="https://i.ibb.co/n887KPZw/Untitled-design-24.png" alt="player"/>
         <div class="absolute inset-0 flex justify-center items-center">
-          <div class="rounded-xl bg-white/5 backdrop-blur ring-1 ring-white/10 
-                      px-3 py-4 text-center 
-                      w-[70%] sm:max-w-[60%] md:max-w-[50%]">
-            <h3 class="font-semibold text-white 
-                       text-sm sm:text-base md:text-xl leading-snug">
-             O que você vai receber,<br> dividido em 3 Fases
-            </h3>
+          <div class="rounded-xl bg-white/5 backdrop-blur ring-1 ring-white/10 px-3 py-4 text-center w-[80%] sm:w-[70%] md:w-[60%]">
+            <h3 class="font-semibold text-white text-sm sm:text-base md:text-xl leading-snug relative z-10" style="color:#ffffff;">
+O que você vai receber em 3 fases
+</h3>
+
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
 
 <!-- Cards das fases -->
-<div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto 
-            -mt-[20%] md:-mt-36 relative z-10">
-  
-  <!-- Card 1 -->
-  <div class="rounded-xl bg-[#0c111d] 
-              p-3 sm:p-4 md:p-6 
-              flex flex-col justify-between h-full shadow-lg">
-    <p class="text-[0.65rem] sm:text-[0.8rem] text-cyan-400 mb-1 sm:mb-2">Fase 01</p>
-    <h4 class="font-semibold text-white mb-1 sm:mb-3 text-sm sm:text-base md:text-xl">Início Imediato</h4>
-    <p class="text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] text-white">
-     Como gerar suas primeiras vendas em poucos dias.
-    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto -mt-12 md:-mt-36 relative z-10 px-4">
+  <div class="rounded-xl bg-[#0c111d] p-4 sm:p-5 md:p-6 shadow-[0_10px_25px_rgba(0,255,255,0.2),0_5px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(0,255,255,0.25),0_10px_20px_rgba(0,0,0,0.25)] transition-shadow duration-300">
+    <p class="text-[0.7rem] sm:text-xs text-cyan-400 mb-2">Fase 01</p>
+    <h4 class="font-semibold text-white mb-2 text-base sm:text-lg md:text-xl">Início Imediato</h4>
+    <p class="text-sm sm:text-[0.95rem] text-white">Como gerar suas primeiras vendas em poucos dias.</p>
   </div>
-  
-  <!-- Card 2 -->
-  <div class="rounded-xl bg-[#0c111d] 
-              p-3 sm:p-4 md:p-6 
-              flex flex-col justify-between h-full shadow-lg">
-    <p class="text-[0.65rem] sm:text-[0.8rem] text-cyan-400 mb-1 sm:mb-2">Fase 02</p>
-    <h4 class="font-semibold text-white mb-1 sm:mb-3 text-sm sm:text-base md:text-xl">Escala Automática</h4>
-    <p class="text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] text-white">
-      Como multiplicar resultados com inteligência e automação.
-    </p>
+  <div class="rounded-xl bg-[#0c111d] p-4 sm:p-5 md:p-6 shadow-[0_10px_25px_rgba(0,255,255,0.2),0_5px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(0,255,255,0.25),0_10px_20px_rgba(0,0,0,0.25)] transition-shadow duration-300">
+    <p class="text-[0.7rem] sm:text-xs text-cyan-400 mb-2">Fase 02</p>
+    <h4 class="font-semibold text-white mb-2 text-base sm:text-lg md:text-xl">Escala Automática</h4>
+    <p class="text-sm sm:text-[0.95rem] text-white">Como multiplicar resultados com inteligência e automação.</p>
   </div>
-  
-  <!-- Card 3 -->
-  <div class="rounded-xl bg-[#0c111d] 
-              p-3 sm:p-4 md:p-6 
-              flex flex-col justify-between h-full shadow-lg">
-    <p class="text-[0.65rem] sm:text-[0.8rem] text-cyan-400 mb-1 sm:mb-2">Fase 03</p>
-    <h4 class="font-semibold text-white mb-1 sm:mb-3 text-sm sm:text-base md:text-xl">Liberdade Digital</h4>
-    <p class="text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] text-white">
-      Como consolidar um negócio lucrativo e recorrente.
-    </p>
+  <div class="rounded-xl bg-[#0c111d] p-4 sm:p-5 md:p-6 shadow-[0_10px_25px_rgba(0,255,255,0.2),0_5px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(0,255,255,0.25),0_10px_20px_rgba(0,0,0,0.25)] transition-shadow duration-300">
+    <p class="text-[0.7rem] sm:text-xs text-cyan-400 mb-2">Fase 03</p>
+    <h4 class="font-semibold text-white mb-2 text-base sm:text-lg md:text-xl">Liberdade Digital</h4>
+    <p class="text-sm sm:text-[0.95rem] text-white">Como consolidar um negócio lucrativo e recorrente.</p>
   </div>
 </div>
 
 
-</div>
-<!-- CTA -->
-<div class="text-center mt-8">
-  <a href="#checkout" class="inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
- Quero Acesso ao Método Monarca
-  </a>
-  <p class="text-xs text-slate-400 mt-2">Por apenas 12 x R$ 8,16</p>
-</div>
+  <!-- CTA -->
+  <div class="text-center mt-8 px-4">
+    <a href="#checkout" class="inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+      Quero Acesso ao Método Monarca
+    </a>
+    <p class="text-xs text-slate-400 mt-2">Por apenas 12 x R$ 8,16</p>
+  </div>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monarca Das Assinaturas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ====== SEÇÃO CATÁLOGO (Swiper) ====== -->
+  <section class="relative py-16">
+    <!-- Glow estático atrás do card -->
+    <div class="absolute top-[118px] left-[min(2rem,4vw)] w-[200px] h-[200px] rounded-full
+         bg-[radial-gradient(circle_at_center,_white_0%,_#01bfec_30%,_transparent_70%)]
+         blur-3xl opacity-80 z-0"></div>
 
-  <!-- SwiperJS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
-<body class="bg-[#0c111d] text-white">
-
-<!-- ====== SEÇÃO CATÁLOGO ====== -->
-<section class="relative py-16">
-<!-- Glow estático atrás do card -->
-<div class="absolute top-[118px] left-[calc(1px-38px)] w-[200px] h-[200px] rounded-full
-     bg-[radial-gradient(circle_at_center,_white_0%,_#01bfec_30%,_transparent_70%)]
-     blur-3xl opacity-80 z-0"></div>
-
-
-
-  <div class="container mx-auto max-w-6xl px-4">
-    <div class="md:flex md:items-center md:justify-between gap-8">
-      
-      <!-- Coluna esquerda: texto -->
-      <div class="md:w-1/3 flex flex-col justify-center text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl font-bold">Do Absoluto Zero<br> ao Monarca das Assinaturas</h2>
-      </div>
-      
-      <!-- Coluna direita: carrossel -->
-      <div class="md:w-2/3 relative">
-        <!-- Swiper container -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-
-            <!-- 10 POSTERS (unsplash free) -->
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/MxKqYf6c/b213fd22-7772-485a-ae27-1efe0a6f797a.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 1 • Sua Jornada Começa Aqui</h3>
-                <p class="text-xs text-slate-300/80">O produto que vende sozinho todos os dias</p>
-              </div>
-            </div>
-            
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/tPw1WQXB/97e70804-2a6a-467b-927a-e96e3ca29723.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 2 • Código Secreto</h3>
-                <p class="text-xs text-slate-300/80">Construa algo que trabalha enquanto você dorme</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/DDmY9yRZ/5.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 3 • A ideia milionaria</h3>
-                <p class="text-xs text-slate-300/80">Como transformar sua ideia em um negócio que vende sozinho</p>
-              </div>
-            </div>
-
-                 <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/TxYw6VZT/a1c7d0d0-52a4-4278-9aa4-cb93e3d67aaf.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 4 • Máquina de Vendas</h3>
-                <p class="text-xs text-slate-300/80">Do zero à sua primeira máquina de vendas automáticas</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/pjVQ9f84/41d71d8d-0bcc-42ae-a4cc-a876c43f98a1.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 5 • Portal da Escala</h3>
-                <p class="text-xs text-slate-300/80">Maquina de Venda Automática!</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/nND7CwjC/6.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 6 • Aura Digital </h3>
-                <p class="text-xs text-slate-300/80">Estratégias para viralizar e multiplicar seus seguidores rapidamente</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/yB5hC3Tx/8.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 7 • R$1000 EM 7 DIAS</h3>
-                <p class="text-xs text-slate-300/80">Método tão simples que até crianças estão fazendo</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/CpG6tVNz/9.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 8 • BÔNUS EXCLUSIVO</h3>
-                <p class="text-xs text-slate-300/80">Ferramentas e estratégias secretas para acelerar seu crescimento</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
-              <img class="h-[340px] w-full object-cover" src="https://i.ibb.co/mCrdry8M/7.png
-?q=80&w=800&auto=format&fit=crop" alt="poster"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3">
-                <h3 class="font-semibold text-white">Módulo 9 • SUPORTE 24/7</h3>
-                <p class="text-xs text-slate-300/80">Acompanhamento e respostas rápidas para garantir seus resultados</p>
-              </div>
-            </div>
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="md:flex md:items-center md:justify-between gap-8">
+        <!-- Coluna esquerda: texto -->
+        <div class="md:w-1/3 flex flex-col justify-center text-center md:text-left mb-6 md:mb-0">
+          <h2 class="text-2xl md:text-3xl font-bold">Do Absoluto Zero<br> ao Monarca das Assinaturas</h2>
         </div>
 
-        <!-- Paginação e Navegação -->
-        <div class="flex justify-center items-center mt-4 space-x-4">
-          <div class="swiper-pagination !static"></div>
-        </div>
-        <div class="swiper-button-prev text-white"></div>
-        <div class="swiper-button-next text-white"></div>
-      </div>
+        <!-- Coluna direita: carrossel -->
+        <div class="md:w-2/3 relative">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/MxKqYf6c/b213fd22-7772-485a-ae27-1efe0a6f797a.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                  <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">• Módulo 1 •</h3>
+                </div>
+              </div>
 
-    </div>
-  </div>
-</section>
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/tPw1WQXB/97e70804-2a6a-467b-927a-e96e3ca29723.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                  <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 2 •</h3>
+          
+                </div>
+              </div>
 
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    },
-  });
-</script>
-
-</body>
-</html>
-
-
-<!-- ====== Swiper JS & CSS ====== -->
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/DDmY9yRZ/5.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 3 •</h3>
  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+                </div>
+              </div>
 
-<script>
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.5,       // quantos visíveis
-    spaceBetween: 20,          // espaçamento entre slides
-    loop: true,                // loop infinito
-    autoplay: {
-      delay: 2500,             // velocidade automática
-      disableOnInteraction: false,
-    },
-    grabCursor: true,          // permite arrastar manual
-    breakpoints: {
-      640: { slidesPerView: 2, spaceBetween: 20 },
-      768: { slidesPerView: 2.5, spaceBetween: 25 },
-      1024: { slidesPerView: 3, spaceBetween: 30 },
-    },
-  });
-</script>
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/TxYw6VZT/a1c7d0d0-52a4-4278-9aa4-cb93e3d67aaf.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                   <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 4 •</h3>
+         
+                </div>
+              </div>
 
-<!-- ====== NOVIDADES GRID ====== -->
-<section class="relative py-6">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center gap-2 mb-6 justify-center">
-      <h2 class="text-2xl font-bold">Monarca Prime</h2>
-      <img src="https://i.ibb.co/vxp00d8M/7641727.png" 
-           alt="verificado" 
-           class="w-5 h-5 object-contain" />
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/pjVQ9f84/41d71d8d-0bcc-42ae-a4cc-a876c43f98a1.jpg?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                  <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 5 •</h3>
+         
+                </div>
+              </div>
+
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/nND7CwjC/6.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+            <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 6 •</h3>
+                 
+                </div>
+              </div>
+
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/yB5hC3Tx/8.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                  <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 7 •</h3>
+             
+                </div>
+              </div>
+
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/CpG6tVNz/9.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                <h3 class="font-semibold text-white text-sm sm:text-base relative z-10" style="color:#ffffff;">•Módulo 8 •</h3>
+           
+                </div>
+              </div>
+
+              <div class="swiper-slide rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge relative">
+                <img class="w-full h-64 sm:h-72 md:h-[340px] object-cover" src="https://i.ibb.co/mCrdry8M/7.png?q=80&w=800&auto=format&fit=crop" alt="poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+            
+          
+                </div>
+              </div>
+            </div>
+
+            <!-- Paginação e Navegação -->
+            <div class="flex justify-center items-center mt-4 space-x-4">
+              <div class="swiper-pagination !static"></div>
+            </div>
+            <div class="swiper-button-prev text-white"></div>
+            <div class="swiper-button-next text-white"></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- wrapper centralizado -->
-    <div class="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto">
+  <!-- ====== NOVIDADES GRID ====== -->
+  <section class="relative py-6">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center gap-2 mb-6 justify-center">
+        <h2 class="text-2xl font-bold">Monarca Prime</h2>
+        <img src="https://i.ibb.co/vxp00d8M/7641727.png" alt="verificado" class="w-5 h-5 object-contain" />
+      </div>
 
-      <!-- card -->
-      <article class="w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
-        <div class="relative">
-          <img class="h-56 w-full object-cover" src="
-https://i.ibb.co/DDJJwYxZ/Copy-of-Untitled-607-x-607-px-360-x-224-px.png
-?q=80&w=1200&auto=format&fit=crop" alt=""/>
-          <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3">
-            <p class="text-xs text-cyan-300">MONARCA • O PONTO AZUL</p>
-            <h3 class="font-semibold">Estrategista do Invisível.</h3>
-            <p class="text-sm text-slate-300/80">Seja único onde todos parecem iguais — a chave para atrair atenção e autoridade.</p>
+      <div class="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto">
+        <!-- card 1 -->
+        <article class="w-full sm:w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
+          <div class="relative">
+            <img class="h-56 w-full object-cover" src="https://i.ibb.co/DDJJwYxZ/Copy-of-Untitled-607-x-607-px-360-x-224-px.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <p class="text-xs text-cyan-300">MONARCA • O PONTO AZUL</p>
+              <h3 class="font-semibold">Estrategista do Invisível.</h3>
+              <p class="text-sm text-slate-300/80">Seja único onde todos parecem iguais — a chave para atrair atenção e autoridade.</p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- card -->
-      <article class="w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
-        <div class="relative">
-          <img class="h-56 w-full object-cover" src="https://i.ibb.co/YBKNmhSR/Copy-of-Untitled-607-x-607-px-360-x-224-px-1.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
-          <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3">
-            <p class="text-xs text-cyan-300">MONARCA • SUPREMACIA</p>
-            <h3 class="font-semibold">O código dos anúncios milionários.</h3>
-            <p class="text-sm text-slate-300/80">Facebook Ads Versão 2025.</p>
+        <!-- card 2 -->
+        <article class="w-full sm:w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
+          <div class="relative">
+            <img class="h-56 w-full object-cover" src="https://i.ibb.co/YBKNmhSR/Copy-of-Untitled-607-x-607-px-360-x-224-px-1.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <p class="text-xs text-cyan-300">MONARCA • SUPREMACIA</p>
+              <h3 class="font-semibold">O código dos anúncios milionários.</h3>
+              <p class="text-sm text-slate-300/80">Facebook Ads Versão 2025.</p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- card -->
-      <article class="w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
-        <div class="relative">
-          <img class="h-56 w-full object-cover" src="https://i.ibb.co/JR6vGtPY/Copy-of-Untitled-607-x-607-px-360-x-224-px-3.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
-          <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3">
-            <p class="text-xs text-cyan-300">MONARCA • EXCLUSIVO</p>
-            <h3 class="font-semibold">Arrisquei e mudei o jogo.</h3>
-            <p class="text-sm text-slate-300/80">Sem decisões ousadas, não se alcança o extraordinário.</p>
+        <!-- card 3 -->
+        <article class="w-full sm:w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
+          <div class="relative">
+            <img class="h-56 w-full object-cover" src="https://i.ibb.co/JR6vGtPY/Copy-of-Untitled-607-x-607-px-360-x-224-px-3.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <p class="text-xs text-cyan-300">MONARCA • EXCLUSIVO</p>
+              <h3 class="font-semibold">Arrisquei e mudei o jogo.</h3>
+              <p class="text-sm text-slate-300/80">Sem decisões ousadas, não se alcança o extraordinário.</p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- card -->
-      <article class="w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
-        <div class="relative">
-          <img class="h-56 w-full object-cover" src="https://i.ibb.co/x8dd0YGY/Copy-of-Untitled-607-x-607-px-360-x-224-px-4.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
-          <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3">
-            <p class="text-xs text-cyan-300">MONARCA • TÁTICAS</p>
-            <h3 class="font-semibold">O jogo da espionagem digital.</h3>
-            <p class="text-sm text-slate-300/80">Descubra como vigiar concorrentes e transformar fraquezas em lucro.</p>
+        <!-- card 4 -->
+        <article class="w-full sm:w-[320px] md:w-[360px] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
+          <div class="relative">
+            <img class="h-56 w-full object-cover" src="https://i.ibb.co/x8dd0YGY/Copy-of-Untitled-607-x-607-px-360-x-224-px-4.png?q=80&w=1200&auto=format&fit=crop" alt=""/>
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <p class="text-xs text-cyan-300">MONARCA • TÁTICAS</p>
+              <h3 class="font-semibold">O jogo da espionagem digital.</h3>
+              <p class="text-sm text-slate-300/80">Descubra como vigiar concorrentes e transformar fraquezas em lucro.</p>
+            </div>
           </div>
-        </div>
-      </article>
-
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== PREÇO + SELO ====== -->
-<section id="checkout" class="relative py-16">
-<!-- Glow estático atrás do card -->
-<div class="absolute top-[178px] left-[137px] w-[200px] h-[200px] rounded-full
-     bg-[radial-gradient(circle_at_center,_white_0%,_#01bfec_30%,_transparent_70%)]
-     blur-3xl opacity-80 z-0"></div>
+  <!-- ====== PREÇO + SELO (Checkout) ====== -->
+  <section id="checkout" class="relative py-16">
+    <div class="absolute top-[178px] left-[8%] w-[200px] h-[200px] rounded-full
+         bg-[radial-gradient(circle_at_center,_white_0%,_#01bfec_30%,_transparent_70%)]
+         blur-3xl opacity-80 z-0"></div>
 
-
-
-  <div class="scale-y-[0.9] origin-top">
     <div class="container mx-auto max-w-6xl px-4">
       <div class="flex flex-col lg:flex-row gap-6 items-stretch justify-center">
-          
+
         <!-- preço -->
-        <div class="flex-1 min-w-[345px] max-w-[483px] rounded-2xl ring-1 ring-white/10 
-                    bg-[#0a1829] p-7 md:p-9 shadow-[0_0_12px_#01a6f7] relative z-10 
-                    lg:translate-x-[12%] lg:translate-y-[0%]">
-          <div class="flex justify-center mb-4 relative z-10 mt-4">
-            <img class="h-[160px] w-auto" 
-                 src="https://i.ibb.co/7NZ72ZS9/Monarca-Das-Assinaturas-19-08-2025-1-Nero-AI-Image-Upscaler-Photo-Face.png" 
-                 alt="logo"/>
+        <div class="flex-1 min-w-[280px] max-w-[520px] rounded-2xl ring-1 ring-white/10 bg-[#0a1829] p-6 sm:p-8 shadow-[0_0_12px_#01a6f7] relative z-10">
+          <div class="flex justify-center mb-4">
+<img class="h-21 sm:h-48 w-auto" src="https://i.ibb.co/ynrYxGxT/Black-Yellow-Elegant-Modern-Letters-Logo-4.png" alt="logo"/>
           </div>
           <p class="text-sm text-slate-500 text-center">Por apenas 12x de</p>
           <p class="text-3xl md:text-4xl font-extrabold mt-1 text-center">R$8,16</p>
           <div class="flex justify-center">
-            <a href="#comprar" 
-               class="mt-5 inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 
-                      px-6 py-3 font-semibold shadow-glow transition">
-              Última Chance: Quero Entrar Agora
+            <a href="#comprar" class="mt-5 inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+             Quero Entrar Agora
             </a>
           </div>
-               <!-- Avatares -->
-<div class="mt-6 flex justify-center items-center">
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white" 
-     src="https://images.unsplash.com/photo-1634983852158-996b99c1b26f?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 1"/>
 
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-2 z-10"
-     src="https://images.unsplash.com/photo-1652742887375-6ddb210d797e?crop=faces&fit=crop&w=100&h=100"
-     alt="Avatar 2"/>
-
-
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-4 z-10"
-     src="https://images.unsplash.com/photo-1631885628726-d60689c330db?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 3"/>
-
-<img class="h-10 w-10 rounded-full object-cover ring-2 ring-white relative -left-6 z-10"
-     src="https://images.unsplash.com/photo-1640728422795-e620da751e13?crop=faces&fit=crop&w=100&h=100" 
-     alt="Avatar 4"/>
-          <span class="ml-3 text-sm text-slate-400 leading-tight mt-2 md:mt-0 block md:inline-block">
-           Se 1.500+ alunos já começaram,<br> O que você está esperando?
-          </span>
+          <!-- Avatares -->
+          <div class="mt-6 flex flex-wrap justify-center items-center">
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1560787313-5dff3307e257?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar 1"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar 2"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1549351512-c5e12b11e283?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar 3"/>
+            <img class="h-10 w-10 rounded-full object-cover ring-2 ring-white -ml-2" src="https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar 4"/>
+            <span class="ml-3 text-sm text-slate-400 leading-tight mt-3 md:mt-0 block text-center md:text-left">
+              Se 1.500+ alunos já começaram,<br> O que você está esperando?
+            </span>
+          </div>
         </div>
+
+        <!-- selo -->
+        <div class="flex-1 min-w-[280px] max-w-[520px] rounded-2xl ring-1 ring-white/10 bg-edge p-6 sm:p-8 grid place-items-center text-center relative">
+          <div class="scale-100 sm:scale-105 md:scale-110">
+            <div class="grid place-items-center gap-2">
+              <img src="https://i.ibb.co/xK3G9mvd/Untitled-design-16.png"
+                   class="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 -mt-2 sm:-mt-4 md:-mt-6"
+                   alt="selo"/>
+              <h3 class="font-extrabold text-white text-lg sm:text-xl md:text-2xl -mt-1 sm:-mt-2 md:-mt-4">
+                Placa Monarca 100K
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300/80 max-w-[260px] sm:max-w-sm leading-relaxed">
+         Ganhe enquanto constrói sua própria máquina de vendas e <br>alcança resultados reais.
+Teste sem riscos por 7 dias: se não conseguir criar sua máquina, devolvemos 100% do seu investimento.
+É simples: ou você cria sua máquina de vendas, ou não paga nada.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-
-<!-- selo garantia -->
-<div class="flex-1 min-w-[300px] max-w-[462px] rounded-2xl ring-1 ring-white/10 bg-edge 
-            p-6 md:p-8 grid place-items-center text-center relative">
-  <div class="scale-100 md:scale-[1.1] lg:scale-[1.2]">
-    <div class="grid place-items-center gap-2">
-      <img src="https://i.ibb.co/xK3G9mvd/Untitled-design-16.png" 
-           class="h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 lg:h-48 lg:w-48 -mt-4 md:-mt-6 lg:-mt-[40px] scale-[1.15] sm:scale-100" 
-           alt="selo"/>
-      <h3 class="font-extrabold text-white text-lg sm:text-xl md:text-2xl -mt-2 md:-mt-4 lg:-mt-[40px]">
-    Placa Monarca 100K
-      </h3>
-      <p class="text-xs sm:text-sm text-slate-300/80 max-w-[250px] sm:max-w-sm leading-relaxed">
-     Ganhe ao criar sua máquina de vendas<br> e alcançar resultados reais..<br>
-        Teste sem risco por 7 dias.<br>Se não criar sua máquina,<br> devolvemos 100% do valor.<br>
-        É simples: ou você cria sua<br> máquina de vendas,<br> ou não paga nada.              
-      </p>
     </div>
-  </div>
-</div>
+  </section>
+
+  <!-- ====== SOBRE / DEPOIMENTO ====== -->
+<section class="relative py-12 bg-[#0a1729] text-white">
+ <div class="absolute inset-0 pointer-events-none"></div>
 
 
+  <div class="container relative mx-auto max-w-6xl px-4">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      
+      <!-- Left Content -->
+      <div class="relative z-10 p-4">
+        <h3 class="text-2xl md:text-3xl font-bold">Zek & Sam</h3>
+        <p class="mt-3 text-white/90 text-base leading-relaxed">
+          Somos irmãos gêmeos e criamos uma metodologia prática e direta que te ensina a vender de verdade e construir sua máquina de vendas — do zero ao status de Monarca — sem experiência, sem investir e sem precisar aparecer, usando apenas um celular.
+        </p>
+        <p class="mt-3 text-white/80 text-base leading-relaxed">
+          Juntos, mostramos como criar produtos, assinaturas e sistemas que faturam automaticamente, com estratégias testadas que realmente funcionam. Nesta formação, você terá passo a passo completo, acompanhamento estratégico e técnicas avançadas para crescer rápido, mesmo começando do zero.
+        </p>
       </div>
+
+      <!-- Right Image -->
+      <div class="relative z-10 rounded-2xl overflow-hidden ring-1 ring-white/20 shadow-lg">
+        <img 
+          class="h-64 sm:h-80 md:h-[380px] w-full object-cover object-center"
+          src="https://i.ibb.co/kVdL9Vn7/Untitled-607-x-607-px.png?q=80&w=1600&auto=format&fit=crop"
+          alt="Thiago Finch"
+        />
+      </div>
+
     </div>
   </div>
 </section>
-
-
-
-<!-- ====== SOBRE / DEPOIMENTO ====== -->
-<section class="relative py-10">
-  <div class="container mx-auto max-w-6xl px-4">
-    <!-- items-start mantém o texto alinhado ao topo da imagem -->
-    <div class="grid lg:grid-cols-2 gap-6 items-start relative">
-      <!-- Texto -->
-      <div class="relative z-10 p-2">
-        <h3 class="text-2xl font-bold">Ezek & Sam</h3>
-        <p class="mt-2 text-slate-300/85">
-Criamos uma metodologia prática e direta que te ensina a vender de verdade e construir sua máquina de vendas, do zero ao status de Monarca — sem experiência, sem investir e sem aparecer, usando apenas um celular.
-
-Aprenda a criar produtos, assinaturas e sistemas que faturam sozinhos, com estratégias que realmente funcionam.
-Nesta formação, você terá passo a passo completo, acompanhamento estratégico e técnicas para crescer rápido, mesmo começando do zero.        </p>
-      </div>
-
-      <!-- Card da imagem -->
-      <div class="relative z-10 rounded-2xl overflow-hidden ring-1 ring-white/10 bg-edge">
-        <img class="h-[360px] w-full object-cover object-[center_30%] sm:object-center"
-          src="https://i.ibb.co/kVdL9Vn7/Untitled-607-x-607-px.png?q=80&w=1600&auto=format&fit=crop" 
-          alt="Thiago Finch"/>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 
 
@@ -866,7 +743,6 @@ Nesta formação, você terá passo a passo completo, acompanhamento estratégic
       </div>
 
       <div class="space-y-3">
-        <!-- item FAQ -->
         <details class="group rounded-xl bg-edge ring-1 ring-white/10 p-4 open:shadow-inner">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-3">
             <span class="font-semibold">O que é o Monarca das Assinaturas?</span>
@@ -946,15 +822,47 @@ Nesta formação, você terá passo a passo completo, acompanhamento estratégic
           </summary>
           <p class="mt-3 text-slate-300/85">Aceitamos pagamento à vista ou parcelado no cartão. Você pode pagar <strong>12x de R$8,16</strong> ou <strong>R$97,92 à vista</strong> — desconto especial para as primeiras inscrições. O pagamento é seguro e é processado diretamente pelo site.</p>
         </details>
-
       </div>
 
       <p class="text-center text-[11px] text-slate-400 mt-10">© 2025 Monarca Das Assinaturas • Todos os direitos reservados • Termos e Privacidade</p>
     </div>
   </section>
 
-
+  <!-- ====== Scripts ====== -->
   <script>
+    // Modais de vídeo/imagem
+    function openVideoModal(id) {
+      const container = document.getElementById('modalPlayer');
+      container.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.width = '100%';
+      iframe.height = '100%';
+      iframe.style.border = '0';
+      iframe.scrolling = 'no';
+      iframe.allowFullscreen = true;
+      iframe.src = `https://go.screenpal.com/player/${id}?autoplay=1&controls=1&share=1&download=1&embed=1&width=1280&height=720&overlays=1&ff=1`;
+      container.appendChild(iframe);
+      document.getElementById('videoModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideoModal() {
+      const container = document.getElementById('modalPlayer');
+      container.innerHTML = '';
+      document.getElementById('videoModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    function openImageModal(src) {
+      const img = document.getElementById('modalImage');
+      img.src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+      document.getElementById('modalImage').src = '';
+      document.body.style.overflow = 'auto';
+    }
+
     // Suave scroll para CTA
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', (e)=>{
@@ -964,8 +872,31 @@ Nesta formação, você terá passo a passo completo, acompanhamento estratégic
           document.querySelector(href)?.scrollIntoView({behavior:'smooth'});
         }
       })
-    })
+    });
+
+    // Swiper unificado
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        1024:{ slidesPerView: 3, spaceBetween: 24 },
+      },
+    });
   </script>
-  
 </body>
 </html>
