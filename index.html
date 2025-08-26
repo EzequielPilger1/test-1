@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://i.ibb.co" />
+
+<link rel="stylesheet" href="./dist/output.css">
   <title>MDA - Monarca Das Assinaturas - Zek e Sam</title>
+   <!-- Configuração do Tailwind antes do script CDN -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -31,6 +48,8 @@
   <!-- Swiper (single version, unified) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
 
   <style>
    /* Subtle scrollbars */
@@ -181,47 +200,45 @@ document.getElementById("topbar").innerHTML =
 
 
 </script>
-
-  <!-- ====== HERO ====== -->
+   <!-- ====== HERO ====== -->
   <header class="relative overflow-hidden min-h-[70vh] sm:min-h-[75vh] lg:min-h-[50vh]">
     <div class="absolute inset-0 bg-[radial-gradient(900px_500px_at_70%_0%,rgba(59,130,246,.18),transparent_60%)] pointer-events-none"></div>
     <section class="relative isolate">
-      <div class="absolute inset-0 bg-[url('https://i.ibb.co/60VNpb3P/Untitled-design-20.png')] bg-cover bg-center bg-no-repeat opacity-15"></div>
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" style="background-image: url('https://i.ibb.co/60VNpb3P/Untitled-design-20.png');" fetchpriority="high"></div>
+
 
       <div class="container mx-auto max-w-6xl px-4 sm:px-6 pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-24">
         <div class="grid lg:grid-cols-2 gap-8 items-start">
           <div class="z-10">
             <p class="text-xs tracking-widest uppercase text-cyan-400/80 mb-3">Oferta Exclusiva • Acesso Imediato</p>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-           Pessoas comuns já estão faturando 
+              Pessoas comuns já estão faturando 
               <span class="text-cyan-400 drop-shadow"><br>R$ 500 a R$ 2.000 por semana</span>  
-  e você ainda está de fora?</span>
+              e você ainda está de fora?
             </h1>
             <p class="mt-4 text-slate-300 max-w-prose">Sem aparecer, sem investir, começando do zero. O que você está esperando?</p>
 
             <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-  <a href="https://pay.kiwify.com.br/7NpGNhh" target="_blank" rel="noopener noreferrer"
-     class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
-    Quero Começar Hoje
-  </a>
-</div>
-
+              <a href="https://pay.kiwify.com.br/7NpGNhh" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+                Quero Começar Hoje
+              </a>
+            </div>
           </div>
 
           <div class="relative mx-auto w-full max-w-md">
-  <img
-    src="https://i.ibb.co/V0gwjRfF/Untitled-design-17.png"
-    alt="Imagem livre"
-    class="isolate w-full h-auto mx-auto scale-110 sm:scale-110 md:scale-110 
-           translate-y-10 sm:translate-y-12 md:translate-y-14 lg:translate-y-28 "
-    style="mix-blend-mode: normal;"
-  />
-</div>
+            <img
+              src="https://i.ibb.co/V0gwjRfF/Untitled-design-17.png"
+              alt="Imagem livre"
+              class="isolate w-full h-auto mx-auto scale-110 sm:scale-110 md:scale-110 translate-y-10 sm:translate-y-12 md:translate-y-14 lg:translate-y-28"
+              style="mix-blend-mode: normal;"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
   </header>
-
   <!-- ====== Seção Cards + Texto ====== -->
   <section class="relative bg-[#0c111d] text-white overflow-visible">
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20 relative z-0">
@@ -250,55 +267,55 @@ document.getElementById("topbar").innerHTML =
         </div>
 
         <!-- Grade dinâmica 4 cards (2x2 no mobile, 4 no lg) -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto relative z-10">
-          <!-- Card 1 - Vídeo -->
-          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
-               onclick="openVideoModal('cTjr3kn2zw9')">
-            <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/40/cTjr3kn2zw9/preview.jpg"
-                 class="absolute inset-0 w-full h-full object-cover rounded-xl" alt="" />
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
-              <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-            </div>
-          </div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto relative z-10">
+  <!-- Card 1 - Vídeo -->
+  <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
+       onclick="openVideoModal('cTjr3kn2zw9')">
+    <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/40/cTjr3kn2zw9/preview.jpg"
+         class="absolute inset-0 w-full h-full object-cover rounded-xl" alt="" loading="lazy" />
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+      <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+      </div>
+    </div>
+  </div>
 
-          <!-- Card 2 - Imagem -->
-          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
-               onclick="openImageModal('https://i.ibb.co/4gKLytTy/Untitled-design-21.png')">
-            <img src="https://i.ibb.co/4gKLytTy/Untitled-design-21.png" class="absolute inset-0 w-full h-full object-cover" alt=""/>
-            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
-              <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
-                <span>Clique para ampliar</span>
-              </div>
-            </div>
-          </div>
+  <!-- Card 2 - Imagem -->
+  <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
+       onclick="openImageModal('https://i.ibb.co/4gKLytTy/Untitled-design-21.png')">
+    <img src="https://i.ibb.co/4gKLytTy/Untitled-design-21.png" class="absolute inset-0 w-full h-full object-cover" alt="" loading="lazy"/>
+    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
+      <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
+        <span>Clique para ampliar</span>
+      </div>
+    </div>
+  </div>
 
-          <!-- Card 3 - Vídeo -->
-          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
-               onclick="openVideoModal('cTjr39n2zyA')">
-            <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/58/cTjr39n2zyA/preview.jpg"
-                 class="absolute inset-0 w-full h-full object-cover rounded-xl" alt=""/>
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
-              <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-            </div>
-          </div>
+  <!-- Card 3 - Vídeo -->
+  <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-2 sm:-translate-y-12 cursor-pointer"
+       onclick="openVideoModal('cTjr39n2zyA')">
+    <img src="https://d1ka0itfguscri.cloudfront.net/p20N/2025/08/21/22/58/cTjr39n2zyA/preview.jpg"
+         class="absolute inset-0 w-full h-full object-cover rounded-xl" alt="" loading="lazy"/>
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+      <div class="h-14 w-14 flex items-center justify-center rounded-full bg-white/20 text-white">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+      </div>
+    </div>
+  </div>
 
-          <!-- Card 4 - Imagem -->
-          <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
-               onclick="openImageModal('https://i.ibb.co/HD9857td/Untitled-design-22.png')">
-            <img src="https://i.ibb.co/HD9857td/Untitled-design-22.png" class="absolute inset-0 w-full h-full object-cover" alt=""/>
-            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
-              <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
-                <span>Clique para ampliar</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Card 4 - Imagem -->
+  <div class="relative aspect-[9/16] max-h-[320px] sm:max-h-[340px] rounded-xl overflow-hidden shadow-xl -translate-y-1 sm:-translate-y-9 cursor-pointer group"
+       onclick="openImageModal('https://i.ibb.co/HD9857td/Untitled-design-22.png')">
+    <img src="https://i.ibb.co/HD9857td/Untitled-design-22.png" class="absolute inset-0 w-full h-full object-cover" alt="" loading="lazy"/>
+    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
+      <div class="text-white text-sm sm:text-base font-semibold flex items-center space-x-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-4.553a1 1 0 0 0-1.414-1.414L13.586 8H9a1 1 0 1 0 0 2h4.586l4.553 4.553a1 1 0 0 0 1.414-1.414L15 10z"/></svg>
+        <span>Clique para ampliar</span>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Modais globais -->
         <!-- Vídeo -->
@@ -943,6 +960,7 @@ Teste sem riscos por 7 dias: se não conseguir criar sua máquina, devolvemos 10
         1024:{ slidesPerView: 3, spaceBetween: 24 },
       },
     });
+    
   </script>
 <footer style="background:#0B1522; padding:15px 20px; text-align:center; font-size:12px; color:#555; line-height:1.5;">
   <p>
@@ -964,6 +982,7 @@ Teste sem riscos por 7 dias: se não conseguir criar sua máquina, devolvemos 10
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 </body>
 </html>
