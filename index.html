@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Monarca Das Assinaturas — Gêmeos Lab</title>
+  <title>MDA - Monarca Das Assinaturas - Zek e Sam</title>
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -157,6 +157,30 @@ p {
 </head>
 
 <body class="bg-base text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-white">
+<div id="topbar" 
+     style="background-color: red; color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 16px;">
+</div>
+
+<script>
+  const hoje = new Date();
+  const diaAtual = hoje.getDate();
+  const mesAtual = hoje.toLocaleString("pt-BR", { month: "long" });
+  const anoAtual = hoje.getFullYear();
+
+  // pega os dois dias anteriores corretamente (mesmo em virada de mês)
+  const ontem = new Date(hoje);
+  ontem.setDate(diaAtual - 1);
+
+  const anteontem = new Date(hoje);
+  anteontem.setDate(diaAtual - 2);
+
+  const dias = [anteontem.getDate(), ontem.getDate(), diaAtual];
+
+document.getElementById("topbar").innerHTML =
+  `Somente nos dias: <strong>${dias[0]}, ${dias[1]} e ${dias[2]} de ${mesAtual}</strong>: vagas quase esgotadas, garanta a sua!`;
+
+
+</script>
 
   <!-- ====== HERO ====== -->
   <header class="relative overflow-hidden min-h-[70vh] sm:min-h-[75vh] lg:min-h-[50vh]">
@@ -176,10 +200,12 @@ p {
             <p class="mt-4 text-slate-300 max-w-prose">Sem aparecer, sem investir, começando do zero. O que você está esperando?</p>
 
             <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-              <a href="#checkout" class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
-               Quero Começar Agora
-              </a>
-            </div>
+  <a href="https://pay.kiwify.com.br/7NpGNhh" target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+    Quero Começar Hoje
+  </a>
+</div>
+
           </div>
 
           <div class="relative mx-auto w-full max-w-md">
@@ -204,7 +230,7 @@ p {
         <!-- Texto -->
         <div class="max-w-xl md:max-w-md transition-transform duration-300 translate-y-2 md:translate-y-6 mx-auto md:mx-0 text-center md:text-left">
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Uma estratégia tão poderosa que já mudou<br class="hidden md:block">a vida de centenas de pessoas comuns!
+            Uma estratégia tão poderosa que já mudou <br class="hidden md:block">a vida de centenas de pessoas comuns!
           </h2>
           <p class="text-slate-400 text-sm mt-4">
             Um sistema simples, 100% automático que transforma<br class="hidden sm:block">
@@ -461,11 +487,15 @@ O que você vai receber em 3 fases
 
   <!-- CTA -->
   <div class="text-center mt-8 px-4">
-    <a href="#checkout" class="inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
-      Quero Acesso ao Método Monarca
-    </a>
-    <p class="text-xs text-slate-400 mt-2">Por apenas 12 x R$ 8,16</p>
-  </div>
+  <a href="https://pay.kiwify.com.br/7NpGNhh" target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+    Quero o Método Monarca
+  </a>
+  <p class="text-xs text-slate-400 mt-2">
+    Por apenas <strong>12 x R$ 8,16</strong> • <span class="text-red-500 font-semibold">Vagas limitadas!</span>
+  </p>
+</div>
+
 
   <!-- ====== SEÇÃO CATÁLOGO (Swiper) ====== -->
   <section class="relative py-16">
@@ -657,13 +687,18 @@ O que você vai receber em 3 fases
           <div class="flex justify-center mb-4">
 <img class="h-21 sm:h-48 w-auto" src="https://i.ibb.co/ynrYxGxT/Black-Yellow-Elegant-Modern-Letters-Logo-4.png" alt="logo"/>
           </div>
-          <p class="text-sm text-slate-500 text-center">Por apenas 12x de</p>
-          <p class="text-3xl md:text-4xl font-extrabold mt-1 text-center">R$8,16</p>
-          <div class="flex justify-center">
-            <a href="#comprar" class="mt-5 inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
-             Quero Entrar Agora
-            </a>
-          </div>
+      <div class="flex flex-col items-center text-center">
+  <p class="text-xs text-slate-400 mt-2">
+    Por apenas <strong>12 x R$ 8,16</strong> • <span class="text-red-500 font-semibold">Vagas limitadas!</span>
+  </p>
+</div>
+          <div class="flex justify-center mt-5">
+  <a href="https://pay.kiwify.com.br/7NpGNhh" 
+     class="inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition"
+     target="_blank" rel="noopener noreferrer">
+    Quero Entrar Agora
+  </a>
+</div>
 
           <!-- Avatares -->
           <div class="mt-6 flex flex-wrap justify-center items-center">
@@ -824,8 +859,19 @@ Teste sem riscos por 7 dias: se não conseguir criar sua máquina, devolvemos 10
         </details>
       </div>
 
-      <p class="text-center text-[11px] text-slate-400 mt-10">© 2025 Monarca Das Assinaturas • Todos os direitos reservados • Termos e Privacidade</p>
+  
     </div>
+   <div class="flex justify-center">
+  <a href="https://pay.kiwify.com.br/7NpGNhh" target="_blank" 
+     class="mt-5 inline-flex items-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-500 px-6 py-3 font-semibold shadow-glow transition">
+    Garantir Minha Vaga
+  </a>
+</div>
+<div class="flex flex-col items-center text-center">
+  <p class="text-xs text-slate-400 mt-2">
+    Por apenas <strong>12 x R$ 8,16</strong> • <span class="text-red-500 font-semibold">Vagas limitadas!</span>
+  </p>
+</div>
   </section>
 
   <!-- ====== Scripts ====== -->
@@ -898,5 +944,26 @@ Teste sem riscos por 7 dias: se não conseguir criar sua máquina, devolvemos 10
       },
     });
   </script>
+<footer style="background:#0B1522; padding:15px 20px; text-align:center; font-size:12px; color:#555; line-height:1.5;">
+  <p>
+    Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.  
+    As informações apresentadas nesta página e nos produtos oferecidos não garantem resultados.  
+    Resultados individuais podem variar e dependem do esforço de cada pessoa.
+  </p>
+  <p>
+    Não vendemos seu e-mail ou qualquer informação para terceiros.  
+    Jamais fazemos spam. Para dúvidas, entre em contato conosco em horário comercial.
+  </p>
+  <p>
+    Política de Privacidade: coletamos apenas dados necessários para processar seu pedido e oferecer suporte.  
+    Termos de Uso: todo o conteúdo é informativo; você deve aplicar as informações de acordo com seu próprio julgamento.
+  </p>
+  <p>
+  <br> © 2025 Monarca Das Assinaturas • Todos os direitos reservados • Termos e Privacidade
+  </p>
+</footer>
+
+
+
 </body>
 </html>
